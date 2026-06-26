@@ -71,6 +71,16 @@
   .chip.g{background:var(--goodBg);color:var(--good)}
   .chip.a{background:#FEF3C7;color:var(--low)}
 
+  /* DEVICE (real screenshots) */
+  .device{width:300px;border-radius:46px;background:#0C1322;padding:10px;box-shadow:0 40px 80px -24px rgba(12,19,34,.45),0 0 0 1px rgba(255,255,255,.06) inset}
+  .device img{width:100%;height:auto;display:block;border-radius:37px}
+  .compare2{display:grid;grid-template-columns:1fr 1fr;gap:14px;justify-items:center;align-items:start;max-width:680px;margin:34px auto 0}
+  .cmp{display:flex;flex-direction:column;align-items:center;margin:0;width:100%;max-width:320px}
+  .cmphead{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:6px}
+  .cmphead b{font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.01em}
+  .cardimg{width:100%;height:auto;display:block}
+  @media(max-width:720px){.compare2{grid-template-columns:1fr;gap:6px;max-width:340px}}
+
   /* LOGOS / trust strip */
   .strip{padding:30px 0 10px;color:var(--faint);font-size:13px;font-weight:600;text-align:center;letter-spacing:.04em;text-transform:uppercase}
 
@@ -90,7 +100,8 @@
   /* SPLIT showcase */
   .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
   .showcard{background:linear-gradient(160deg,#F3F5FA,#E8ECF5);border:1px solid var(--border);border-radius:28px;padding:34px;aspect-ratio:4/3;display:grid;place-items:center}
-  @media(max-width:860px){.split{grid-template-columns:1fr;gap:32px}}
+  .split.rev .phonewrap{order:-1}
+  @media(max-width:860px){.split{grid-template-columns:1fr;gap:32px}.split.rev .phonewrap{order:0}}
 
   /* CTA band */
   .band{background:linear-gradient(125deg,var(--primary),#4A43C9 55%,var(--teal));border-radius:32px;padding:56px;color:#fff;text-align:center;position:relative;overflow:hidden}
@@ -130,29 +141,8 @@
       </div>
     </div>
     <div class="phonewrap">
-      <div class="phone">
-        <span class="notch"></span>
-        <div class="screen">
-          <svg class="map-svg" viewBox="0 0 280 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <rect width="280" height="600" fill="#E7EDF4"/>
-            <g stroke="#D4DCE8" stroke-width="6"><path d="M-20 120H300M-20 230H300M-20 360H300M-20 470H300"/><path d="M60 -20V620M150 -20V620M230 -20V620"/></g>
-            <g fill="#DCE4EE"><rect x="68" y="128" width="74" height="94" rx="3"/><rect x="158" y="128" width="64" height="94" rx="3"/><rect x="68" y="238" width="74" height="114" rx="3"/><rect x="158" y="238" width="64" height="60" rx="3"/></g>
-            <path d="M44 300 C 90 300, 110 250, 150 250 S 210 200, 226 150" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
-            <path d="M44 300 C 90 300, 110 250, 150 250 S 210 200, 226 150" fill="none" stroke="#007AFF" stroke-width="5.5" stroke-linecap="round"/>
-            <!-- origin blue dot -->
-            <circle cx="44" cy="300" r="10" fill="#007AFF" stroke="#fff" stroke-width="3"/>
-            <!-- pickup green bike -->
-            <g transform="translate(150,250)"><circle r="13" fill="#15803D" stroke="#fff" stroke-width="3"/><path d="M-5 2a3 3 0 106 0 3 3 0 10-6 0M-1 2a3 3 0 106 0 3 3 0 10-6 0" fill="none" stroke="#fff" stroke-width="1.5"/></g>
-            <!-- dest red flag -->
-            <g transform="translate(226,150)"><circle r="13" fill="#DC2626" stroke="#fff" stroke-width="3"/><path d="M-2 5V-4l6 2-6 2" fill="#fff"/></g>
-          </svg>
-          <div class="sheet">
-            <div class="grab"></div>
-            <div class="stn"><span class="ic" style="background:var(--goodBg)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17l4-6h5l3 6"/></svg></span><div><div class="nm">W 21 St &amp; 6 Ave</div><div class="mt">2 min walk · 11 e-bikes</div></div><span class="chip g">11</span></div>
-            <div class="stn"><span class="ic" style="background:#EEF1F7"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3F7DD4" stroke-width="2"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M9 9h6M9 13h6"/></svg></span><div><div class="nm">Broadway &amp; W 24 St</div><div class="mt">4 min walk · 6 docks open</div></div><span class="chip a">6</span></div>
-            <div class="stn"><span class="ic" style="background:var(--goodBg)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17l4-6h5l3 6"/></svg></span><div><div class="nm">5 Ave &amp; E 29 St</div><div class="mt">5 min walk · 14 bikes</div></div><span class="chip g">14</span></div>
-          </div>
-        </div>
+      <div class="device" style="transform:rotate(-2deg)">
+        <img src="img/pedl-nearby.webp" alt="Pedl showing live bike and dock availability across Manhattan" width="300" height="652">
       </div>
     </div>
   </div>
@@ -186,59 +176,33 @@
 </section>
 
 <section id="how" style="padding-top:0">
-  <div class="wrap split">
-    <div>
-      <span class="eyebrow">How it works</span>
-      <h2 class="h2">From your door to theirs, planned in a tap.</h2>
-      <p class="lead">Tell Pedl where you're going. It finds the closest station with bikes, the best one to dock at the other end, and routes you the whole way — accounting for which stations actually tend to have availability.</p>
-    </div>
-    <div class="showcard">
-      <div class="phone" style="transform:rotate(2deg) scale(.92)">
-        <span class="notch"></span>
-        <div class="screen" style="background:#fff">
-          <div style="padding:54px 18px 16px">
-            <div style="font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.02em">Plan a trip</div>
-            <div style="margin-top:18px;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:14px">
-              <div style="display:flex;gap:11px;align-items:center"><span style="width:10px;height:10px;border-radius:50%;background:#007AFF"></span><span style="font-size:14px;color:var(--mute)">Current location</span></div>
-              <div style="height:1px;background:var(--border);margin:11px 0"></div>
-              <div style="display:flex;gap:11px;align-items:center"><span style="width:10px;height:10px;border-radius:2px;background:#DC2626"></span><span style="font-size:14px;font-weight:600">Brooklyn Bridge Park</span></div>
-            </div>
-            <div style="margin-top:16px;border:1px solid var(--border);border-radius:16px;overflow:hidden">
-              <div style="padding:13px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border)"><span style="font-size:18px">🚶</span><span style="font-size:13px;color:var(--mute)">Walk 2 min</span><span style="margin-left:auto;font-weight:700;font-size:13px">0.1 mi</span></div>
-              <div style="padding:13px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);background:var(--goodBg)"><span style="font-size:18px">🚲</span><span style="font-size:13px;font-weight:600;color:var(--good)">Ride 14 min</span><span style="margin-left:auto;font-weight:700;font-size:13px;color:var(--good)">2.3 mi</span></div>
-              <div style="padding:13px 14px;display:flex;align-items:center;gap:10px"><span style="font-size:18px">🚶</span><span style="font-size:13px;color:var(--mute)">Walk 3 min</span><span style="margin-left:auto;font-weight:700;font-size:13px">0.2 mi</span></div>
-            </div>
-            <div style="margin-top:16px;background:var(--primary);color:#fff;border-radius:14px;padding:14px;text-align:center;font-weight:600;font-size:15px">Start voice navigation</div>
-          </div>
-        </div>
-      </div>
+  <div class="wrap" style="text-align:center">
+    <span class="eyebrow">Electric or classic</span>
+    <h2 class="h2" style="margin-left:auto;margin-right:auto">See the difference before you ride.</h2>
+    <p class="lead" style="margin-left:auto;margin-right:auto">Plan any trip, then tap between classic and e-bike — Pedl shows exactly how each one changes your time and cost. Same route, your choice.</p>
+    <div class="compare2">
+      <figure class="cmp">
+        <div class="cmphead"><b>Classic</b></div>
+        <img class="cardimg" src="img/pedl-classic-card.webp" alt="Pedl classic-bike plan to Battery Park: 33 minutes, free with pass" width="712" height="634">
+      </figure>
+      <figure class="cmp">
+        <div class="cmphead"><b>Electric</b></div>
+        <img class="cardimg" src="img/pedl-ebike-card.webp" alt="Pedl e-bike plan to Battery Park: 20 minutes, about $3.78" width="712" height="634">
+      </figure>
     </div>
   </div>
 </section>
 
-<section id="compare" style="padding-top:0">
-  <div class="wrap split">
+<section id="nav" style="padding-top:0">
+  <div class="wrap split rev">
     <div>
-      <span class="eyebrow">Electric or classic?</span>
-      <h2 class="h2">See the trade-off before you unlock.</h2>
-      <p class="lead">For every trip, Pedl shows how much faster an e-bike gets you there — and what each option is likely to cost. No more guessing whether the e-bike is worth it.</p>
+      <span class="eyebrow">Voice navigation</span>
+      <h2 class="h2">Eyes on the road, screen in your pocket.</h2>
+      <p class="lead">Pedl speaks turn-by-turn directions the whole way — when to walk, where to undock, and which turns to take — and keeps guiding you with the screen off, so you never have to look down mid-ride.</p>
     </div>
-    <div class="showcard" style="background:#fff">
-      <div style="width:100%;max-width:360px;display:grid;grid-template-columns:1fr 1fr;gap:14px">
-        <div style="background:linear-gradient(170deg,#E6FBFA,#fff);border:1.5px solid var(--teal);border-radius:18px;padding:18px;position:relative">
-          <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:var(--teal);background:#E6FBFA;padding:3px 9px;border-radius:999px">FASTEST</span>
-          <div style="width:38px;height:38px;border-radius:11px;background:var(--teal);display:grid;place-items:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
-          <div style="font-family:var(--display);font-weight:700;font-size:15px;margin-top:14px">Electric</div>
-          <div style="font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.02em;margin-top:8px">9<span style="font-size:15px;color:var(--mute);font-weight:600"> min</span></div>
-          <div style="font-size:14px;color:var(--mute);margin-top:4px">~$4.20 est.</div>
-        </div>
-        <div style="background:linear-gradient(170deg,#EEEDFB,#fff);border:1.5px solid var(--primary);border-radius:18px;padding:18px;position:relative">
-          <span style="position:absolute;top:14px;right:14px;font-size:11px;font-weight:700;color:var(--primary);background:#EEEDFB;padding:3px 9px;border-radius:999px">CHEAPEST</span>
-          <div style="width:38px;height:38px;border-radius:11px;background:var(--primary);display:grid;place-items:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17l4-6h5l3 6"/></svg></div>
-          <div style="font-family:var(--display);font-weight:700;font-size:15px;margin-top:14px">Classic</div>
-          <div style="font-family:var(--display);font-weight:700;font-size:30px;letter-spacing:-.02em;margin-top:8px">16<span style="font-size:15px;color:var(--mute);font-weight:600"> min</span></div>
-          <div style="font-size:14px;color:var(--mute);margin-top:4px">Included w/ pass</div>
-        </div>
+    <div class="phonewrap">
+      <div class="device" style="transform:rotate(-2deg)">
+        <img src="img/pedl-nav.webp" alt="Pedl voice navigation guiding a ride turn-by-turn" width="300" height="652">
       </div>
     </div>
   </div>
